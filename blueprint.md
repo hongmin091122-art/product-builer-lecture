@@ -8,7 +8,7 @@ This project will create a visually stunning, single-page web application that g
 
 ### Visual Design
 
-*   **Color Palette:** A vibrant and energetic color palette will be used, featuring strong gradients and contrasting colors to create a dynamic look and feel.
+*   **Color Palette:** A vibrant and energetic color palette will be used, featuring strong gradients and contrasting colors to create a dynamic look and feel. The application will support both a default (dark) and a light theme.
 *   **Typography:** Expressive and modern fonts will be used to create a clear visual hierarchy.
 *   **Layout:** A clean, centered layout will be used to focus the user's attention on the generated numbers.
 *   **Effects:**
@@ -27,28 +27,25 @@ This project will create a visually stunning, single-page web application that g
     *   The bonus number will be visually distinct from the main numbers.
 *   **Interactivity:**
     *   A "Generate Numbers" button will trigger the number generation process.
-    *   The button will have a hover effect to indicate interactivity.
+    *   A "Toggle Theme" button will switch the application between a dark and a light theme.
 
 ## File Structure
 
 ```
 .
+├── blueprint.md
 ├── index.html
 ├── main.js
 └── style.css
 ```
 
-## Implementation Plan
+## Current Task: Implement Theme Toggling
 
-1.  **`index.html`:**
-    *   Set up the basic HTML structure with a title, a container for the app, and a "Generate Numbers" button.
-    *   Create placeholders for the generated numbers.
-    .
+1.  **`blueprint.md`:** Update the project blueprint to include the theme toggling feature.
 2.  **`style.css`:**
-    *   Implement the vibrant color palette and background texture.
-    *   Style the number containers with the lifted effect and animations.
-    *   Style the "Generate" button with the glow effect.
+    *   Define CSS variables for both light and dark themes.
+    *   Create a `.light-mode` class to apply the light theme styles when added to the `body` element.
 3.  **`main.js`:**
-    *   Create a function to generate the unique random numbers.
-    *   Add an event listener to the "Generate" button to call the number generation function.
-    *   Update the HTML to display the newly generated numbers with animations.
+    *   Get a reference to the theme toggle button from `index.html`.
+    *   Add a `click` event listener to the button.
+    *   Implement the logic to toggle the `.light-mode` class on the `body` element when the button is clicked.
