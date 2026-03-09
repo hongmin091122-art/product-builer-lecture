@@ -1,74 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-3212963506338449">
-    <title>Lotto Number Generator</title>
+    <meta name="description" content="고품질 로또 번호 생성기입니다. 확률과 통계 기반의 번호 생성 알고리즘에 대한 정보와 함께 행운의 번호를 확인해보세요.">
+    <meta name="keywords" content="로또번호생성기, 로또확률, 행운의번호, 로또번호추천, 로또통계">
+    <title>Lotto Perfect - 고품질 로또 번호 생성기 및 분석 정보</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3212963506338449"
      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="lotto-container">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
-        <h1>Lotto Number Generator</h1>
-        <div class="numbers-display">
-            <div class="number-placeholder"></div>
-            <div class="number-placeholder"></div>
-            <div class="number-placeholder"></div>
-            <div class="number-placeholder"></div>
-            <div class="number-placeholder"></div>
-            <div class="number-placeholder bonus"></div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Lotto Perfect</div>
+            <ul class="nav-links">
+                <li><a href="#generator">생성기</a></li>
+                <li><a href="#about">정보</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">문의</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="generator" class="section">
+            <div class="lotto-container">
+                <h1>Lotto Number Generator</h1>
+                <p class="subtitle">당신의 행운을 테스트해보세요</p>
+                <div class="numbers-display">
+                    <div class="number-placeholder"></div>
+                    <div class="number-placeholder"></div>
+                    <div class="number-placeholder"></div>
+                    <div class="number-placeholder"></div>
+                    <div class="number-placeholder"></div>
+                    <div class="number-placeholder bonus"></div>
+                </div>
+                <button id="generate-btn">번호 생성하기</button>
+            </div>
+        </section>
+
+        <section id="about" class="section info-section">
+            <div class="content-card">
+                <h2>로또와 무작위성의 과학</h2>
+                <p>로또 번호 선택은 순수한 확률의 영역입니다. 많은 사람들이 '자주 나오는 번호'나 '최근에 나오지 않은 번호'를 추적하지만, 통계학적으로 각 추첨은 독립 시행입니다. 즉, 이전 회차의 결과가 다음 회차에 영향을 주지 않는다는 뜻입니다.</p>
+                <p>저희 <strong>Lotto Perfect</strong>는 진정한 무작위성(Randomness)을 제공하기 위해 최신 알고리즘을 사용하여 번호를 생성합니다. 번호 생성 시 발생할 수 있는 편향을 최소화하여, 모든 사용자가 공평한 확률을 가질 수 있도록 돕습니다.</p>
+                <h3>효율적인 번호 선택 팁</h3>
+                <ul>
+                    <li>특정 패턴(예: 1, 2, 3, 4, 5, 6)에 집착하지 마세요. 모든 조합의 확률은 동일합니다.</li>
+                    <li>생일이나 기념일 등 31 이하의 숫자에만 집중하는 것은 번호 범위를 좁힐 수 있습니다.</li>
+                    <li>자동 생성 기능을 활용하여 고정관념에서 벗어난 번호 조합을 시도해보세요.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq-section">
+            <div class="content-card">
+                <h2>자주 묻는 질문 (FAQ)</h2>
+                <div class="faq-item">
+                    <h4>Q: 이 번호로 당첨될 확률이 높아지나요?</h4>
+                    <p>A: 로또는 수학적으로 모든 조합이 동일한 확률을 가집니다. 본 생성기는 인위적인 선택을 배제하고 순수한 무작위 조합을 제공하는 데 목적이 있습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q: 생성된 번호는 저장되나요?</h4>
+                    <p>A: 본 서비스는 사용자의 프라이버시를 존중하며, 생성된 번호를 서버에 저장하지 않습니다. 브라우저를 닫으면 데이터는 사라집니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="affiliate-container">
+                <h2>제휴 및 서비스 문의</h2>
+                <p class="form-desc">서비스 개선 제안이나 비즈니스 문의가 있으시면 아래 양식을 통해 연락주세요.</p>
+                <form action="https://formspree.io/f/xgonoopd" method="POST">
+                    <div class="form-group">
+                        <label for="name">성함</label>
+                        <input type="text" id="name" name="name" placeholder="홍길동" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="_replyto" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">회사명/서비스명</label>
+                        <input type="text" id="company" name="company" placeholder="회사 또는 서비스 이름을 입력해주세요">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">문의 내용</label>
+                        <textarea id="message" name="message" rows="4" placeholder="문의하실 내용을 입력해주세요" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">문의하기</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="comments" class="section">
+            <div class="comments-container">
+                <h2>사용자 커뮤니티</h2>
+                <div id="disqus_thread"></div>
+                <script>
+                    (function() { 
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://productbuilder-24ssocp91v.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Lotto Perfect. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" onclick="alert('준비 중입니다.')">개인정보처리방침</a>
+                <a href="#" onclick="alert('준비 중입니다.')">이용약관</a>
+                <a href="#" onclick="alert('준비 중입니다.')">책임의 한계와 법적고지</a>
+            </div>
+            <p class="disclaimer">※ 로또는 만 19세 미만 청소년은 구매할 수 없으며, 과도한 몰입은 해로울 수 있습니다.</p>
         </div>
-        <button id="generate-btn">Generate Numbers</button>
-    </div>
+    </footer>
 
-    <div class="affiliate-container">
-        <h2>제휴 문의</h2>
-        <form action="https://formspree.io/f/xgonoopd" method="POST">
-            <div class="form-group">
-                <label for="name">성함</label>
-                <input type="text" id="name" name="name" placeholder="홍길동" required>
-            </div>
-            <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="email" id="email" name="_replyto" placeholder="example@email.com" required>
-            </div>
-            <div class="form-group">
-                <label for="company">회사명/서비스명</label>
-                <input type="text" id="company" name="company" placeholder="회사 또는 서비스 이름을 입력해주세요">
-            </div>
-            <div class="form-group">
-                <label for="message">문의 내용</label>
-                <textarea id="message" name="message" rows="4" placeholder="문의하실 내용을 입력해주세요" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">문의하기</button>
-        </form>
-    </div>
-
-    <div class="comments-container">
-        <h2>의견 남기기</h2>
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://productbuilder-24ssocp91v.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
     <script src="main.js"></script>
 </body>
 </html>

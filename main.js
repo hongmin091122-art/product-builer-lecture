@@ -25,6 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
     generateBtn.addEventListener('click', () => {
         const numbers = generateLottoNumbers();
         displayNumbers(numbers);
@@ -44,12 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const numberEl = document.createElement('div');
                 numberEl.classList.add('number');
+                // The bonus logic (index 5) is preserved for visual variety
                 if (index === 5) {
                     numberEl.classList.add('bonus');
                 }
                 numberEl.textContent = number;
                 numbersDisplay.appendChild(numberEl);
-            }, index * 200);
+            }, index * 150);
         });
     }
 });
