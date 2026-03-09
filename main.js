@@ -68,12 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateLottoNumbers() {
         const numbers = new Set();
-        // Generate 6 numbers, 6th is bonus
-        while (numbers.size < 6) {
+        // Generate 7 numbers total (6 main + 1 bonus)
+        while (numbers.size < 7) {
             numbers.add(Math.floor(Math.random() * 45) + 1);
         }
-        const sorted = Array.from(numbers).slice(0, 5).sort((a, b) => a - b);
-        const bonus = Array.from(numbers)[5];
+        const tempArray = Array.from(numbers);
+        const sorted = tempArray.slice(0, 6).sort((a, b) => a - b);
+        const bonus = tempArray[6];
         return [...sorted, bonus];
     }
 
@@ -89,19 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
         numbersDisplay.innerHTML = '';
         numbers.forEach((number, index) => {
             setTimeout(() => {
-                const numberEl = document.createElement('div');
-                numberEl.classList.add('number');
-                numberEl.textContent = number;
-                numberEl.style.backgroundColor = getBallColor(number);
-                
-                // Bonus indication (optional visual distinction beyond color)
-                if (index === 5) {
-                    numberEl.style.fontWeight = '800';
-                    // We can add a "Bonus" label or similar if needed, but color is usually enough
+                if (index === 6) {
+                    const bonusWrapper = document.createElement('div');
+                    bonusWrapper.classList.add('bonus-wrapper');
+                    bonusWrapper.innerHTML = `
+                        <span class="plus-sign">+</span>
+                        <div class="number bonus" style="background-color: ${getBallColor(number)}">${number}</div>
+                    `;
+                    numbersDisplay.appendChild(bonusWrapper);
+                } else {
+                    const numberEl = document.createElement('div');
+                    numberEl.classList.add('number');
+                    numberEl.textContent = number;
+                    numberEl.style.backgroundColor = getBallColor(number);
+                    numbersDisplay.appendChild(numberEl);
                 }
-                
-                numbersDisplay.appendChild(numberEl);
-            }, index * 100); // Faster animation
+            }, index * 100);
         });
     }
 
@@ -133,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let numsHtml = '<div class="history-nums">';
             entry.numbers.forEach((n, i) => {
+                if (i === 6) {
+                    numsHtml += `<span class="plus-sign-mini">+</span>`;
+                }
                 numsHtml += `<div class="history-num" style="background-color: ${getBallColor(n)}">${n}</div>`;
             });
             numsHtml += '</div>';

@@ -179,9 +179,30 @@ h1 {
 .numbers-display {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 48px;
-    flex-wrap: wrap; /* Allow wrapping on very small screens */
+    flex-wrap: wrap;
+}
+
+.bonus-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plus-sign {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+}
+
+.plus-sign-mini {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    align-self: center;
 }
 
 .number-placeholder, .number {
