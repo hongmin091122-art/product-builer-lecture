@@ -201,6 +201,82 @@ h1 {
     box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
 }
 
+/* History */
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--placeholder-bg);
+    border-radius: 15px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.history-nums {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.history-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.history-num.bonus {
+    background-color: var(--secondary-color);
+}
+
+.history-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.empty-msg {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.clear-btn {
+    display: block;
+    margin: 20px auto 0;
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--placeholder-bg);
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.clear-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+@keyframes slideIn {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
 /* Info & FAQ */
 .info-section p {
     margin-bottom: 15px;

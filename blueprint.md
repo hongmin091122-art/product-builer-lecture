@@ -28,6 +28,10 @@ This project will create a visually stunning, single-page web application that g
 *   **Interactivity:**
     *   A "Generate Numbers" button will trigger the number generation process.
     *   A "Toggle Theme" button will switch the application between a dark and a light theme.
+*   **Draw History:**
+    *   Generated numbers will be automatically saved to the browser's local storage.
+    *   A list of recent draws will be displayed, allowing users to review their history.
+    *   A "Clear History" option will be provided to remove all saved records.
 
 ## File Structure
 
