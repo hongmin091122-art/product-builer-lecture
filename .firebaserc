@@ -1,5 +1,7 @@
 {
-  "projects": {},
+  "projects": {
+    "default": "product-build-44731040-63d10"
+  },
   "targets": {},
   "etags": {}
 }
