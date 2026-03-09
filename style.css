@@ -116,6 +116,24 @@ body {
     box-shadow: 0 0 20px rgba(255, 59, 59, 0.8);
 }
 
+/* Comments Section Styles */
+.comments-container {
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 600px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 40px;
+}
+
+.comments-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 .theme-toggle {
     position: absolute;
     top: 20px;
