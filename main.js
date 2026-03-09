@@ -12,24 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize UI
     updateHistoryUI();
 
-    // Load saved theme
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
-        body.setAttribute('data-theme', 'light');
-        themeToggle.textContent = '☀️';
+    // Load saved theme (Default to Light now)
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '☀️'; // Sun icon for switching to light
+    } else {
+        body.removeAttribute('data-theme');
+        themeToggle.textContent = '🌙'; // Moon icon for switching to dark
     }
 
     // Theme toggle logic
     themeToggle.addEventListener('click', () => {
         const theme = body.getAttribute('data-theme');
-        if (theme === 'light') {
+        if (theme === 'dark') {
             body.removeAttribute('data-theme');
             themeToggle.textContent = '🌙';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            body.setAttribute('data-theme', 'light');
-            themeToggle.textContent = '☀️';
             localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
         }
     });
 
@@ -74,18 +77,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return [...sorted, bonus];
     }
 
+    function getBallColor(num) {
+        if (num <= 10) return 'var(--ball-10)';
+        if (num <= 20) return 'var(--ball-20)';
+        if (num <= 30) return 'var(--ball-30)';
+        if (num <= 40) return 'var(--ball-40)';
+        return 'var(--ball-45)';
+    }
+
     function displayNumbers(numbers) {
         numbersDisplay.innerHTML = '';
         numbers.forEach((number, index) => {
             setTimeout(() => {
                 const numberEl = document.createElement('div');
                 numberEl.classList.add('number');
-                if (index === 5) {
-                    numberEl.classList.add('bonus');
-                }
                 numberEl.textContent = number;
+                numberEl.style.backgroundColor = getBallColor(number);
+                
+                // Bonus indication (optional visual distinction beyond color)
+                if (index === 5) {
+                    numberEl.style.fontWeight = '800';
+                    // We can add a "Bonus" label or similar if needed, but color is usually enough
+                }
+                
                 numbersDisplay.appendChild(numberEl);
-            }, index * 150);
+            }, index * 100); // Faster animation
         });
     }
 
@@ -104,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateHistoryUI() {
         if (history.length === 0) {
-            historyList.innerHTML = '<p class="empty-msg">아직 추첨된 번호가 없습니다.</p>';
+            historyList.innerHTML = '<p class="empty-msg" style="text-align:center; color:var(--text-tertiary); padding: 40px;">아직 추첨된 번호가 없습니다.</p>';
             clearHistoryBtn.style.display = 'none';
             return;
         }
@@ -117,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let numsHtml = '<div class="history-nums">';
             entry.numbers.forEach((n, i) => {
-                numsHtml += `<div class="history-num ${i === 5 ? 'bonus' : ''}">${n}</div>`;
+                numsHtml += `<div class="history-num" style="background-color: ${getBallColor(n)}">${n}</div>`;
             });
             numsHtml += '</div>';
 

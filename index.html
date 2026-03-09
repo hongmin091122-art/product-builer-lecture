@@ -35,8 +35,6 @@
                 <li><a href="#generator">생성기</a></li>
                 <li><a href="#history">추첨 목록</a></li>
                 <li><a href="#about">정보</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">문의</a></li>
             </ul>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
         </nav>
@@ -48,12 +46,12 @@
                 <h1>Lotto Number Generator</h1>
                 <p class="subtitle">당신의 행운을 테스트해보세요</p>
                 <div class="numbers-display">
-                    <div class="number-placeholder"></div>
-                    <div class="number-placeholder"></div>
-                    <div class="number-placeholder"></div>
-                    <div class="number-placeholder"></div>
-                    <div class="number-placeholder"></div>
-                    <div class="number-placeholder bonus"></div>
+                    <div class="number-placeholder">?</div>
+                    <div class="number-placeholder">?</div>
+                    <div class="number-placeholder">?</div>
+                    <div class="number-placeholder">?</div>
+                    <div class="number-placeholder">?</div>
+                    <div class="number-placeholder bonus">?</div>
                 </div>
                 <button id="generate-btn">번호 생성하기</button>
             </div>
@@ -63,7 +61,7 @@
             <div class="content-card">
                 <h2>최근 추첨 번호 목록</h2>
                 <div id="history-list" class="history-list">
-                    <p class="empty-msg">아직 추첨된 번호가 없습니다.</p>
+                    <p class="empty-msg" style="text-align:center; color:var(--text-tertiary); padding: 40px;">아직 추첨된 번호가 없습니다.</p>
                 </div>
                 <button id="clear-history" class="clear-btn" style="display: none;">기록 삭제</button>
             </div>
@@ -122,6 +120,7 @@
                 </form>
             </div>
         </section>
+
 
         <section id="comments" class="section">
             <div class="comments-container">
